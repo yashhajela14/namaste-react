@@ -1,40 +1,21 @@
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading", xyz: "abc" },
-//   "Hi Mom from React!"
-// );
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// console.log(heading);
+// const heading = React.createElement('h1', { id:'heading'}, "Yo! Namaste bitch!");
 
-const parent = React.createElement("div", { id: "div1", key:"d1" }, [
-  React.createElement("div", { id: "child1", key:"c1" }, [
-    React.createElement(
-      "h1",
-      { id: "heading", key: "h1c1" },
-      "Hi I am an h1 tag from child1"
-    ),
-    React.createElement(
-      "h2",
-      { id: "heading", key: "h2c1" },
-      "Hi I am an h2 tag from child1"
-    ),
-  ]),
-  React.createElement("div", { id: "child2", key: "c2" }, [
-    React.createElement(
-      "h1",
-      { id: "heading", key: "h1c2" },
-      "Hi I am an h1 tag from child2"
-    ),
-    React.createElement(
-      "h2",
-      { id: "heading", key: "h2c2" },
-      "Hi I am an h2 tag from child2"
-    ),
-  ])
-]);
+const Title = () => <h1 className="title">Yo! Namaste from JSX ☀️</h1>;
 
-console.log(parent);
+//Component Composition
+const FuncComponent = () => (
+  <div>
+    {Title()}
+    <Title></Title>
+    <Title />
+    <h2>{console.log(200 + 300)}</h2>
+    <h1 className="heading">Its a Func Comp!</h1>
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<FuncComponent />);
